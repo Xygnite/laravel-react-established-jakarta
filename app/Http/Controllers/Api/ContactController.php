@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreContactRequest;
 use App\Http\Requests\UpdateContactRequest;
+use App\Http\Resources\ContactResource;
 use App\Models\Contact;
 
 class ContactController extends Controller
@@ -13,7 +15,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        return ContactResource::collection(Contact::query()->orderBy(column: 'id', direction: 'desc')->paginate(10));
     }
 
     /**
@@ -21,7 +23,9 @@ class ContactController extends Controller
      */
     public function store(StoreContactRequest $request)
     {
-        //
+        $data = $request->validated();
+        $contact = Contact::create($data);
+        return response(new ContactResource($contact), 201);
     }
 
     /**
@@ -29,7 +33,7 @@ class ContactController extends Controller
      */
     public function show(Contact $contact)
     {
-        //
+        return new ContactResource($contact);
     }
 
     /**
@@ -45,6 +49,8 @@ class ContactController extends Controller
      */
     public function destroy(Contact $contact)
     {
-        //
+        $name = new ContactResource($contact);
+        $contact->delete();
+        return response($name, 200);
     }
 }

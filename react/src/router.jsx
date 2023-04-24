@@ -7,6 +7,8 @@ import DefaultLayout from "./components/DefaultLayout";
 import GuestLayout from "./components/GuestLayout";
 import Dashboard from "./views/Dashboard";
 import UserForm from "./views/UserForm";
+import Contacts from "./views/Contacts";
+import ContactForm from "./views/ContactForm";
 
 const router = createBrowserRouter([
     {
@@ -29,6 +31,14 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard",
                 element: <Dashboard />,
+            },
+            {
+                path: "/contacts",
+                element: <Contacts />,
+            },
+            {
+                path: "/contacts/new",
+                element: <ContactForm key={"contactCreate"} />,
             },
         ],
     },
