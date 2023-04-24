@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreContactsRequest;
-use App\Http\Requests\UpdateContactsRequest;
-use App\Models\Contacts;
+use App\Http\Requests\StoreContactRequest;
+use App\Http\Requests\UpdateContactRequest;
+use App\Models\Contact;
 
-class ContactsController extends Controller
+class ContactController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,7 +19,7 @@ class ContactsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreContactsRequest $request)
+    public function store(StoreContactRequest $request)
     {
         //
     }
@@ -27,7 +27,7 @@ class ContactsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Contacts $contacts)
+    public function show(Contact $contact)
     {
         //
     }
@@ -35,7 +35,7 @@ class ContactsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateContactsRequest $request, Contacts $contacts)
+    public function update(UpdateContactRequest $request, Contact $contact)
     {
         //
     }
@@ -43,7 +43,7 @@ class ContactsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Contacts $contacts)
+    public function destroy(Contact $contact)
     {
         //
     }
