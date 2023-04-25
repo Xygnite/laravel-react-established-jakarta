@@ -38,7 +38,7 @@ export default function UserForm() {
                 .put(`/users/${user.id}`, user)
                 .then(() => {
                     setNotification("User was updated");
-                    navigate("/users");
+                    navigate("/admin/users");
                 })
                 .catch((error) => {
                     // console.log(error);
@@ -56,7 +56,7 @@ export default function UserForm() {
                 .post(`/users`, user)
                 .then(() => {
                     setNotification("User was created");
-                    navigate("/users");
+                    navigate("/admin/users");
                 })
                 .catch((error) => {
                     // console.log(error);

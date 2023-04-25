@@ -36,7 +36,7 @@ export default function ContactForm() {
             .post(`/contacts`, contact)
             .then(() => {
                 setNotification("Contact was created");
-                navigate("/contacts");
+                navigate("/admin/contacts");
             })
             .catch((error) => {
                 // console.log(error);

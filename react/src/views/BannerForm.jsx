@@ -40,7 +40,7 @@ export default function BannerForm() {
                 .put(`/banners/${banner.id}`, banner)
                 .then(() => {
                     setNotification("Banner was created");
-                    navigate("/banners");
+                    navigate("/admin/banners");
                 })
                 .catch((error) => {
                     // console.log(error);
@@ -58,7 +58,7 @@ export default function BannerForm() {
                 .post(`/banners`, formData)
                 .then(() => {
                     setNotification("Banner was created");
-                    navigate("/banners");
+                    navigate("/admin/banners");
                 })
                 .catch((error) => {
                     // console.log(error);
