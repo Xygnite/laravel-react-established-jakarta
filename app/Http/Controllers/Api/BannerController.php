@@ -15,7 +15,7 @@ class BannerController extends Controller
      */
     public function index()
     {
-        return BannerResource::collection(Banner::query()->orderBy(column: 'id', direction: 'desc')->paginate(10));
+        return BannerResource::collection(Banner::query()->orderBy(column: 'priority', direction: 'desc')->paginate(10));
     }
 
     /**
