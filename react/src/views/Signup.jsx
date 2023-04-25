@@ -51,18 +51,26 @@ export default function Signup() {
                             ))}
                         </div>
                     )}
-                    <input ref={nameRef} type="text" placeholder="Full Name" />
                     <input
+                        className="input-theme"
+                        ref={nameRef}
+                        type="text"
+                        placeholder="Full Name"
+                    />
+                    <input
+                        className="input-theme"
                         ref={emailRef}
                         type="email"
                         placeholder="Email Address"
                     />
                     <input
+                        className="input-theme"
                         ref={passwordRef}
                         type="password"
                         placeholder="Password"
                     />
                     <input
+                        className="input-theme"
                         ref={passwordConfirmationRef}
                         type="password"
                         placeholder="Password Confirmation"

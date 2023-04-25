@@ -48,8 +48,14 @@ export default function Login() {
                             ))}
                         </div>
                     )}
-                    <input ref={emailRef} type="email" placeholder="Email" />
                     <input
+                        className="input-theme"
+                        ref={emailRef}
+                        type="email"
+                        placeholder="Email"
+                    />
+                    <input
+                        className="input-theme"
                         ref={passwordRef}
                         type="password"
                         placeholder="Password"

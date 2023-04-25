@@ -66,6 +66,7 @@ export default function ContactForm() {
                 {!loading && (
                     <form onSubmit={onSubmit}>
                         <input
+                            className="input-theme"
                             value={contact.name}
                             onChange={(ev) =>
                                 setContact({
@@ -76,6 +77,7 @@ export default function ContactForm() {
                             placeholder="Name"
                         ></input>
                         <input
+                            className="input-theme"
                             type="email"
                             value={contact.email}
                             onChange={(ev) =>

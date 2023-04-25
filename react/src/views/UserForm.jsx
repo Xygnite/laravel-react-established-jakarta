@@ -88,6 +88,7 @@ export default function UserForm() {
                 {!loading && (
                     <form onSubmit={onSubmit}>
                         <input
+                            className="input-theme"
                             value={user.name}
                             onChange={(ev) =>
                                 setUser({ ...user, name: ev.target.value })
@@ -95,6 +96,7 @@ export default function UserForm() {
                             placeholder="Name"
                         ></input>
                         <input
+                            className="input-theme"
                             type="email"
                             value={user.email}
                             onChange={(ev) =>
@@ -103,6 +105,7 @@ export default function UserForm() {
                             placeholder="Email"
                         ></input>
                         <input
+                            className="input-theme"
                             type="password"
                             onChange={(ev) =>
                                 setUser({ ...user, password: ev.target.value })
@@ -110,6 +113,7 @@ export default function UserForm() {
                             placeholder="Password"
                         ></input>
                         <input
+                            className="input-theme"
                             type="password"
                             onChange={(ev) =>
                                 setUser({

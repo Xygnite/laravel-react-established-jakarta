@@ -196,7 +196,7 @@ input:focus {
 }
 
 .textarea-theme:focus {
-    border-color: #5b08a7;
+    border-color: #FC7737;
 }
 
 textarea:focus {
@@ -345,7 +345,7 @@ table > tbody > tr > td {
 }
 
 .login-signup-form .form .message a {
-    color: #5b08a7;
+    color: #FC7737;
     text-decoration: none;
 } 
 
