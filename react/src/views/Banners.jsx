@@ -37,7 +37,7 @@ export default function Banners() {
 
     return (
         <div>
-            <div className="flex justify-between align-center m-4">
+            <div className="flex justify-between items-center m-4">
                 <h1 className="text-4xl">Banners</h1>
                 <Link to={"/admin/banners/new"} className="btn-add">
                     Add new

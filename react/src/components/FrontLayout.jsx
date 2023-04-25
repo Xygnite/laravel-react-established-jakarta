@@ -161,29 +161,37 @@ export default function FrontLayout() {
             });
     };
 
+    const handleClickScroll = (id) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+                inline: "nearest",
+            });
+        }
+    };
+
     return (
         <div id="defaultLayout">
             <div className="content">
                 <header className="sticky top-0 z-50">
-                    <div
-                        style={{
-                            display: "flex",
-                            justifyContent: "space-between",
-                            alignItems: "center",
-                        }}
-                    >
-                        <div>
+                    <div className="flex justify-between items-center">
+                        <div onClick={() => handleClickScroll("defaultLayout")}>
                             <img src="/logo.png" className="logo"></img>
                         </div>
-                        <div className="ms-5 sm:ms-10 md:ms-14 lg:ms-18 xl:ms-22">
-                            <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">
+                        <div
+                            className="ms-5 sm:ms-10 md:ms-14 lg:ms-18 xl:ms-22"
+                            onClick={() => handleClickScroll("pointContainer")}
+                        >
+                            <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl clickable">
                                 About Us
                             </p>
                         </div>
                     </div>
 
-                    <div>
-                        <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl theme-color font-bold">
+                    <div onClick={() => handleClickScroll("contactContainer")}>
+                        <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl theme-color font-bold clickable">
                             Contact Us
                         </p>
                     </div>
@@ -193,13 +201,7 @@ export default function FrontLayout() {
                         <div className="img-container">
                             <MyCarousel />
                             <div class="img-centered-text">
-                                <div
-                                    style={{
-                                        display: "flex",
-                                        justifyContent: "center",
-                                    }}
-                                    className="h-8 sm:h-12 md:h-16 lg:h-24 xl:h-32"
-                                >
+                                <div className="h-8 sm:h-12 md:h-16 lg:h-24 xl:h-32 flex justify-center">
                                     <div>
                                         <p className="text-2xl sm:text-4xl md:text-4xl lg:text-6xl xl:text-8xl font-bold">
                                             The right&nbsp;
@@ -207,6 +209,7 @@ export default function FrontLayout() {
                                     </div>
                                     <div>
                                         <Carousel
+                                            style={{ backgroundColor: "red" }}
                                             autoPlay={true}
                                             interval={3000}
                                             infiniteLoop={true}
@@ -229,20 +232,26 @@ export default function FrontLayout() {
                                     achieving your big goals.
                                 </p>
                                 <center>
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        strokeWidth={1.5}
-                                        stroke="currentColor"
-                                        className="w-6 h-6 my-1 sm:w-8 sm:h-8 sm:my-4 md:w-10 md:h-10 md:my-6 lg:w-12 lg:h-12 lg:my-8 xl:w-14 xl:h-14 xl:my-10"
+                                    <div
+                                        onClick={() =>
+                                            handleClickScroll("pointContainer")
+                                        }
                                     >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-                                        />
-                                    </svg>
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            strokeWidth={1.5}
+                                            stroke="currentColor"
+                                            className="w-6 h-6 my-1 sm:w-8 sm:h-8 sm:my-4 md:w-10 md:h-10 md:my-6 lg:w-12 lg:h-12 lg:my-8 xl:w-14 xl:h-14 xl:my-10"
+                                        >
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                                            />
+                                        </svg>
+                                    </div>
                                 </center>
                             </div>
                         </div>

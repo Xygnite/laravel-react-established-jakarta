@@ -61,7 +61,7 @@ export default function Contacts() {
 
     return (
         <div>
-            <div className="flex justify-between align-center m-4">
+            <div className="flex justify-between items-center m-4">
                 <h1 className="text-4xl">Contacts</h1>
                 <div>
                     <button

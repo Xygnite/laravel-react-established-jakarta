@@ -77,7 +77,7 @@ export default function BannerForm() {
     return (
         <>
             {!banner.id && <h1>New Banners</h1>}
-            <div className="card animated fadeInDown">
+            <div className="card animated fadeInDown ">
                 {loading && <div className="text-center">Loading...</div>}
                 {errors && (
                     <div className="alert">
@@ -89,6 +89,7 @@ export default function BannerForm() {
                 {!loading && (
                     <form onSubmit={onSubmit} encType="multipart/form-data">
                         <input
+                            className="input-theme"
                             type="number"
                             value={banner.priority}
                             onChange={(ev) =>
@@ -110,6 +111,7 @@ export default function BannerForm() {
                         )}
                         {!banner.id && (
                             <input
+                                className="input-theme"
                                 type="file"
                                 name="path"
                                 onChange={(ev) => {
