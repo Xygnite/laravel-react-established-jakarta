@@ -22,6 +22,8 @@ use Illuminate\Support\Facades\Route;
 Route::post('/signup', [AuthController::class, 'signup']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/contacts', [ContactController::class, 'store']);
+Route::get('/contacts/export', [ContactController::class, 'export']);
+
 
 //protected 
 Route::middleware('auth:sanctum')->group(function () {
@@ -29,9 +31,11 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/user', function (Request $request) {
         return $request->user();
     });
+    // Route::get('/contacts/export', [ContactController::class, 'export']);
     Route::apiResource('/users', UserController::class);
     Route::apiResource('/contacts', ContactController::class);
     Route::apiResource('/banners', BannerController::class);
+    // Route::get('/contacts/export/', [ContactController::class, 'export']);
     // Route::get('/contacts', [ContactController::class, 'index']);
     // Route::get('/contacts/{id}', [ContactController::class, 'show']);
     // Route::delete('/contacts/{id}', [ContactController::class, 'destroy']);

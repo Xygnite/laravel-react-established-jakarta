@@ -125,6 +125,7 @@ textarea:focus {
 
 .btn,
 .btn-add,
+.btn-info,
 .btn-edit,
 .btn-delete {
     font-family: "Roboto", sans-serif;
@@ -145,11 +146,15 @@ textarea:focus {
 }
 
 .btn-add,
+.btn-info,
 .btn-edit,
 .btn-delete{
     padding: 0.5rem 0.75rem;
     font-size: 14px;
     border-radius: 4px;
+}
+.btn-info {
+    background-color: #0075a7;
 }
 .btn-add {
     background-color: #00a762;
@@ -312,7 +317,7 @@ img{
 
 .img-preview{
     width:100%;
-    max-width:600px;
+    max-width:400px;
 }
 
 .animated {

@@ -18,6 +18,7 @@ class BannerResource extends JsonResource
             'id' => $this->id,
             'priority' => $this->priority,
             'path' => $this->path,
+            'created_at' => $this->created_at->format('Y-m-d H:i:s'),
         ];
     }
 }

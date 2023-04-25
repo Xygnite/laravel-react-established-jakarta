@@ -57,6 +57,7 @@ export default function Banners() {
                             <th>Priority</th>
                             <th>Path</th>
                             <th>Preview</th>
+                            <th>Created Date</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -85,6 +86,7 @@ export default function Banners() {
                                             }/storage/bannersImage/${b.path}`}
                                         ></img>
                                     </td>
+                                    <td>{b.created_at}</td>
                                     <td>
                                         <Link
                                             className="btn-edit"

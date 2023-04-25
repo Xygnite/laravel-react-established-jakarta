@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axiosClient from "../axios-client";
+import axiosClient, { axiosFileClient } from "../axios-client";
 import { Link } from "react-router-dom";
 import { useStateContext } from "../contexts/ContextProvider";
 
@@ -37,6 +37,28 @@ export default function Contacts() {
             });
     };
 
+    const getContactsAsExcel = (e) => {
+        e.preventDefault();
+        setLoading(true);
+        axiosFileClient
+            .get("/contacts/export")
+            .then(({ data }) => {
+                setLoading(false);
+                console.log(data);
+                // setContact(data.data);
+                // setMeta(data.meta);
+                const url = window.URL.createObjectURL(new Blob([data]));
+                const link = document.createElement("a");
+                link.href = url;
+                link.setAttribute("download", "contacts.xlsx"); // nama file dan extension sesuaikan dengan file yang di download
+                document.body.appendChild(link);
+                link.click();
+            })
+            .catch(() => {
+                setLoading(false);
+            });
+    };
+
     return (
         <div>
             <div
@@ -47,9 +69,18 @@ export default function Contacts() {
                 }}
             >
                 <h1>Contacts</h1>
-                <Link to={"/contacts/new"} className="btn-add">
-                    Add new
-                </Link>
+                <div>
+                    <button
+                        onClick={(e) => getContactsAsExcel(e)}
+                        className="btn-info"
+                    >
+                        Export as Excel
+                    </button>
+                    &nbsp;
+                    <Link to={"/contacts/new"} className="btn-add">
+                        Add new
+                    </Link>
+                </div>
             </div>
             <div className="card animated fadeInDown">
                 <table>
@@ -75,7 +106,7 @@ export default function Contacts() {
                     {!loading && (
                         <tbody>
                             {contact.map((c) => (
-                                <tr>
+                                <tr key={c.id}>
                                     <td>{c.id}</td>
                                     <td>{c.name}</td>
                                     <td>{c.email}</td>
@@ -95,13 +126,6 @@ export default function Contacts() {
                                     </td>
                                 </tr>
                             ))}
-                            <div
-                                style={{
-                                    display: "flex",
-                                    justifyContent: "space-between",
-                                    alignItems: "center",
-                                }}
-                            ></div>
                         </tbody>
                     )}
                 </table>
