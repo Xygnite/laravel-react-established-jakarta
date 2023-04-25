@@ -37,15 +37,9 @@ export default function Banners() {
 
     return (
         <div>
-            <div
-                style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                }}
-            >
-                <h1>Banners</h1>
-                <Link to={"/banners/new"} className="btn-add">
+            <div className="flex justify-between align-center m-4">
+                <h1 className="text-4xl">Banners</h1>
+                <Link to={"/admin/banners/new"} className="btn-add">
                     Add new
                 </Link>
             </div>
@@ -90,7 +84,7 @@ export default function Banners() {
                                     <td>
                                         <Link
                                             className="btn-edit"
-                                            to={"/banners/" + b.id}
+                                            to={"/admin/banners/" + b.id}
                                         >
                                             Edit
                                         </Link>

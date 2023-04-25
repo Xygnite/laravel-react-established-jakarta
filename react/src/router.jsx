@@ -11,64 +11,79 @@ import Contacts from "./views/Contacts";
 import ContactForm from "./views/ContactForm";
 import Banners from "./views/Banners";
 import BannerForm from "./views/BannerForm";
+import FrontLayout from "./components/FrontLayout";
 
 const router = createBrowserRouter([
     {
-        path: "/",
+        path: "/admin",
         element: <DefaultLayout />,
         children: [
-            { path: "/", element: <Navigate to={"/users"} /> },
+            { path: "/admin", element: <Navigate to={"/admin/users"} /> },
             {
-                path: "/users",
+                path: "/admin/users",
                 element: <Users />,
             },
             {
-                path: "/users/new",
+                path: "/admin/users/new",
                 element: <UserForm key={"userCreate"} />,
             },
             {
-                path: "/users/:id",
+                path: "/admin/users/:id",
                 element: <UserForm key={"userUpdate"} />,
             },
             {
-                path: "/dashboard",
+                path: "/admin/dashboard",
                 element: <Dashboard />,
             },
             {
-                path: "/contacts",
+                path: "/admin/contacts",
                 element: <Contacts />,
             },
             {
-                path: "/contacts/new",
+                path: "/admin/contacts/new",
                 element: <ContactForm key={"contactCreate"} />,
             },
             {
-                path: "/banners",
+                path: "/admin/banners",
                 element: <Banners />,
             },
             {
-                path: "/banners/new",
+                path: "/admin/banners/new",
                 element: <BannerForm key={"bannerCreate"} />,
             },
             {
-                path: "/banners/:id",
+                path: "/admin/banners/:id",
                 element: <BannerForm key={"bannerUpdate"} />,
             },
         ],
     },
     {
-        path: "/",
+        path: "/admin",
         element: <GuestLayout />,
         children: [
             {
-                path: "/login",
+                path: "/admin/login",
                 element: <Login />,
             },
             {
-                path: "/signup",
+                path: "/admin/signup",
                 element: <Signup />,
             },
         ],
+    },
+    {
+        path: "/",
+        element: <FrontLayout />,
+        // children: [
+        //     {
+        //         path: "/admin/login",
+        //         element: <Login />,
+        //     },
+        //     {
+        //         path: "/admin/signup",
+        //         element: <Signup />,
+        //     },
+        // ],
     },
     {
         path: "*",

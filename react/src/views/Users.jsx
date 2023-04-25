@@ -37,15 +37,9 @@ export default function Users() {
 
     return (
         <div>
-            <div
-                style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                }}
-            >
-                <h1>Users</h1>
-                <Link to={"/users/new"} className="btn-add">
+            <div className="flex justify-between align-center m-4">
+                <h1 className="text-4xl">Users</h1>
+                <Link to={"/admin/users/new"} className="btn-add">
                     Add new
                 </Link>
             </div>
@@ -80,7 +74,7 @@ export default function Users() {
                                     <td>
                                         <Link
                                             className="btn-edit"
-                                            to={"/users/" + u.id}
+                                            to={"/admin/users/" + u.id}
                                         >
                                             Edit
                                         </Link>

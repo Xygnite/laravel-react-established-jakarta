@@ -7,11 +7,9 @@ export default function ContactForm() {
     const { id } = useParams();
     const navigate = useNavigate();
     const [contact, setContact] = useState({
-        id: null,
         name: "",
         email: "",
-        password: "",
-        password_confirmation: "",
+        message: "",
     });
     const [loading, setLoading] = useState(false);
     const [errors, setErrors] = useState(null);
@@ -99,7 +97,7 @@ export default function ContactForm() {
                         ></textarea>
                         <button className="btn">Save</button>
                         &nbsp;
-                        <Link to={"/contacts"}>Cancel</Link>
+                        <Link to={"/admin/contacts"}>Cancel</Link>
                     </form>
                 )}
             </div>

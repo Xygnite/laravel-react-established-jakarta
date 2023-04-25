@@ -61,14 +61,8 @@ export default function Contacts() {
 
     return (
         <div>
-            <div
-                style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                }}
-            >
-                <h1>Contacts</h1>
+            <div className="flex justify-between align-center m-4">
+                <h1 className="text-4xl">Contacts</h1>
                 <div>
                     <button
                         onClick={(e) => getContactsAsExcel(e)}
@@ -77,7 +71,7 @@ export default function Contacts() {
                         Export as Excel
                     </button>
                     &nbsp;
-                    <Link to={"/contacts/new"} className="btn-add">
+                    <Link to={"/admin/contacts/new"} className="btn-add">
                         Add new
                     </Link>
                 </div>

@@ -8,7 +8,7 @@ export default function DefaultLayout() {
     console.log(token);
 
     if (!token) {
-        return <Navigate to={"/login"} />;
+        return <Navigate to={"/admin/login"} />;
     }
 
     const onLogout = (e) => {
@@ -29,9 +29,9 @@ export default function DefaultLayout() {
     return (
         <div id="defaultLayout">
             <aside>
-                <Link to="/users">Users</Link>
-                <Link to="/contacts">Contacts</Link>
-                <Link to="/banners">Banners</Link>
+                <Link to="/admin/users">Users</Link>
+                <Link to="/admin/contacts">Contacts</Link>
+                <Link to="/admin/banners">Banners</Link>
             </aside>
             <div className="content">
                 <header>

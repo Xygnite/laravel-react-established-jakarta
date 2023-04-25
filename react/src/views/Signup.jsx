@@ -69,7 +69,8 @@ export default function Signup() {
                     />
                     <button className="btn btn-block">Sign Up</button>
                     <p className="message">
-                        Already Registered? <Link to={"/login"}>Login</Link>
+                        Already Registered?{" "}
+                        <Link to={"/admin/login"}>Login</Link>
                     </p>
                 </form>
             </div>

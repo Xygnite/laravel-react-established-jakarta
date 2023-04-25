@@ -103,8 +103,8 @@ export default function BannerForm() {
                             <div>
                                 <img
                                     src={`${
-                                        import.meta.env.VITE_API_BASE_URL
-                                    }/storage/bannersImage/${banner.path}`}
+                                        import.meta.env.VITE_API_BANNER_URL
+                                    }${banner.path}`}
                                 ></img>
                             </div>
                         )}
@@ -125,7 +125,7 @@ export default function BannerForm() {
                         )}
                         <button className="btn">Save</button>
                         &nbsp;
-                        <Link to={"/banners"}>Cancel</Link>
+                        <Link to={"/admin/banners"}>Cancel</Link>
                     </form>
                 )}
             </div>

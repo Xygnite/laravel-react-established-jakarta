@@ -57,7 +57,7 @@ export default function Login() {
                     <button className="btn btn-block">Login</button>
                     <p className="message">
                         Not Registered?{" "}
-                        <Link to={"/signup"}>Create An Account</Link>
+                        <Link to={"/admin/signup"}>Create An Account</Link>
                     </p>
                 </form>
             </div>
