@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Banner;
 use App\Models\Contact;
 use Illuminate\Database\Seeder;
 
@@ -21,5 +22,6 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         Contact::factory(50)->create();
+        Banner::factory(50)->create();
     }
 }

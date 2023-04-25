@@ -32,10 +32,11 @@ export default function DefaultLayout() {
                 <Link to="/dashboard">Dashboard</Link>
                 <Link to="/users">Users</Link>
                 <Link to="/contacts">Contacts</Link>
+                <Link to="/banners">Banners</Link>
             </aside>
             <div className="content">
                 <header>
-                    <div>Header</div>
+                    <div>Established Jakarta</div>
                     <div>
                         {user.name}
                         <a className="btn-logout" href="#" onClick={onLogout}>

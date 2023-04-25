@@ -306,6 +306,15 @@ table > tbody > tr > td {
     padding: 2rem;
 }
 
+img{
+    width:100%;
+}
+
+.img-preview{
+    width:100%;
+    max-width:600px;
+}
+
 .animated {
     -webkit-animation-duration: 0.3s;
     animation-duration: 0.3s;

@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\ContactController;
+use App\Http\Controllers\Api\BannerController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -30,6 +31,7 @@ Route::middleware('auth:sanctum')->group(function () {
     });
     Route::apiResource('/users', UserController::class);
     Route::apiResource('/contacts', ContactController::class);
+    Route::apiResource('/banners', BannerController::class);
     // Route::get('/contacts', [ContactController::class, 'index']);
     // Route::get('/contacts/{id}', [ContactController::class, 'show']);
     // Route::delete('/contacts/{id}', [ContactController::class, 'destroy']);
